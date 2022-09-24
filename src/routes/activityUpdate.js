@@ -12,7 +12,6 @@ router.put("/", async function (req, res) {
 
 const { activityId, id, name, difficulty, duration, seassion } = req.body;
 
-console.log(req.body)
 
 try {
     if (activityId || id || name || difficulty || duration || seassion) {
