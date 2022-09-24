@@ -91,7 +91,6 @@ router.get("/", async function (req, res) {
 
     } catch (error) {
         res.status(404).json(error)
-        res.send("Estamos en el back")
     }
 
 })
