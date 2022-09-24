@@ -13,7 +13,10 @@ const activityTruncate = require("./activityTruncate")
 
 
 
-
+// Obtener por ID
+router.use("/",  function (req, res) {
+    res.send("Estamos en el back")
+});
 
 
 // Obtener por ID
