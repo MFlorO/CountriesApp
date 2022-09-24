@@ -3,26 +3,20 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 
-const {
-  DATABASE_URL
-} = process.env;  //Me guardo estas variables en un archivo ".env" para que no se suba a github!
+// const {
+//   DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT
+// } = process.env;  //Me guardo estas variables en un archivo ".env" para que no se suba a github!
 
-
+const {DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT}= require("./config.js")
 
 
 
 //#############   CONEXION DE SEQUELIZE(ORM) A MI BD   #############//
 
-const sequelize = new Sequelize( DATABASE_URL, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/countries`, {
   logging: false, // Para que no me salgan los datos de conexion
   native: false, // Permite que Sequelize sepa que podemos usar pg-native para ~30% más de velocidad
-  //CONFIGURACION PARA QUE FuNCIONE EL DEPLOY EN HEROKU
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-  },
+  port: PORT,
 });
 
 

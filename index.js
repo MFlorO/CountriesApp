@@ -18,17 +18,16 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+require('dotenv').config();
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js'); // "conn" tiene todos los modelos juntos, ya que es la instancia de sequelize.models renombrado
-
+const {PORT}= require("./src/config.js")
 
 
 
 //#############    SINCRONIZO LOS MODELOS. En desarrollo usamos "force:true"   #############//
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-    res.send("Welcome al Back")
+  server.listen(`${PORT || 3001}`, () => {
+    console.log(`%s listening at ${PORT || 3001}`); // eslint-disable-line no-console
   });
 });
