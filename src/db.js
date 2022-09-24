@@ -7,16 +7,15 @@ const path = require('path');
 //   DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT
 // } = process.env;  //Me guardo estas variables en un archivo ".env" para que no se suba a github!
 
-const {DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT}= require("./config.js")
+const {DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT, DB_NAME}= require("./config.js")
 
 
 
 //#############   CONEXION DE SEQUELIZE(ORM) A MI BD   #############//
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/countries`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   logging: false, // Para que no me salgan los datos de conexion
   native: false, // Permite que Sequelize sepa que podemos usar pg-native para ~30% más de velocidad
-  port: PORT,
 });
 
 
