@@ -39,8 +39,6 @@ Para chequear que versiones tiene instaladas:
 1. Clonar el repositorio
 2. Crear una base de datos en postgres llamada countries.
 3. Crear un archivo en api llamado .env, que tendrá la siguiente estructura: 
-4. Clonar el repositorio del front que esta en un repositorio aparte, llamado: "Countries-app-front "
-
 ```
 DB_USER=USUARIO_DE_DB
 DB_PASSWORD=CONTRASEÑA_DE_DB
@@ -50,20 +48,18 @@ DB_NAME=countries
 ```
 Reemplazar postgresUser y postgresPassword por tus propias credenciales para conectarse a postgres.
 
-
-5. Correr los siguientes comandos:
+4. Correr los siguientes comandos:
 ```
 npm install
 npm run sync (en api para sincronizar la base de datos con la API externa)
 npm start
 ```
+5. Clonar el repositorio del front que esta en un repositorio aparte, llamado: "Countries-app-front "
 
-## Descripción
 
 ## Descripción
 La aplicación tiene como finalidad poder buscar diferentes paises del mundo y entrar al detalle para mas informacion. Ademas, cuenta con un formulario controlado donde puedo crear distintas actividades turisticas y asociarlas a diferentes paises del mundo.
 Cuenta con un CRUD entero con respecto a las actividades turisticas: se pueden crear, editar, eliminar y ver mas informacion de ellas. 
-
 
 
 ## Deployment
