@@ -7,7 +7,7 @@ const path = require('path');
 //   DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT
 // } = process.env;  //Me guardo estas variables en un archivo ".env" para que no se suba a github!
 
-const {DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, PORT, DB_NAME}= require("./config.js")
+const {DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME}= require("./config.js")
 
 
 
@@ -22,7 +22,7 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 
 
 
-//#############   VERIFICA SI MI CONEXION SE HIce DE FORMA CORRECTA   #############//
+//#############   VERIFICA SI MI CONEXION SE HIZO DE FORMA CORRECTA   #############//
 
 // sequelize.authenticate()
 // .then(()=>{
